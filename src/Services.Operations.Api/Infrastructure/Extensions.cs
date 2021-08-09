@@ -90,7 +90,10 @@ namespace Thesis.Services.Operations.Api.Infrastructure
                 .UseMetrics()
                 .UseStaticFiles()
                 .UseRabbitMq()
-                .SubscribeEvent<LocationAdded>();
+                .SubscribeEvent<RunCancelled>()
+                .SubscribeEvent<RunCompleted>()
+                .SubscribeEvent<RunCreated>()
+                .SubscribeEvent<RunPointCompleted>();
 
             return app;
         }

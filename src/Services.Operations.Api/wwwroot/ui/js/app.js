@@ -4,7 +4,7 @@
     const $connect = document.getElementById("connect");
     const $messages = document.getElementById("messages");
     const connection = new signalR.HubConnectionBuilder()
-        .withUrl('https://thesisapi.ddns.net/hub')
+        .withUrl('http://thesisapi.ddns.net/hub')
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
