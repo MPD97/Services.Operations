@@ -36,4 +36,10 @@
     <ItemGroup>
         <Protobuf Include="Operations.proto" />
     </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\ui\index.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\ui\js\app.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\ui\js\signalr.js" />
+    </ItemGroup>
 </Project>
