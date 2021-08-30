@@ -73,12 +73,10 @@ namespace Thesis.Services.Operations.Api.Infrastructure
                 .AddRabbitMq(plugins: p => p.AddJaegerRabbitMqPlugin())
                 .AddMongo()
                 .AddRedis()
-                .AddMetrics()
                 .AddJaeger()
                 .AddRedis()
                 .AddSignalR()
-                .AddWebApiSwaggerDocs()
-                .AddSecurity();
+                .AddWebApiSwaggerDocs();
         }
 
         public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
@@ -87,8 +85,6 @@ namespace Thesis.Services.Operations.Api.Infrastructure
                 .UseSwaggerDocs()
                 .UseJaeger()
                 .UseConvey()
-                .UseMetrics()
-                .UseStaticFiles()
                 .UseRabbitMq()
                 .SubscribeEvent<RunCancelled>()
                 .SubscribeEvent<RunCompleted>()
